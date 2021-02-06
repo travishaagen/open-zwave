@@ -166,7 +166,7 @@ Manager::Manager() :
 	int nSaveLogLevel = (int) LogLevel_Debug;
 
 	Options::Get()->GetOptionAsInt("SaveLogLevel", &nSaveLogLevel);
-	if ((nSaveLogLevel == 0) || (nSaveLogLevel < LogLevel_Always))
+	if ((nSaveLogLevel == 0) || (nSaveLogLevel > LogLevel_Always))
 	{
 		Log::Write(LogLevel_Warning, "Invalid LogLevel Specified for SaveLogLevel in Options.xml");
 		nSaveLogLevel = (int) LogLevel_Debug;
